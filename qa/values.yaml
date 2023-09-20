@@ -1,4 +1,11 @@
 replicaCount: 3
+
+image:
+  repository: application/vnd.docker.distribution.manifest.v2+json
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "2.0.0"
+
 service:
   type: ClusterIP
   port: 80
