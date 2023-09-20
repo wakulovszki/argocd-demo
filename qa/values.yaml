@@ -2,7 +2,6 @@ replicaCount: 3
 service:
   type: ClusterIP
   port: 80
-
 ingress:
   enabled: true
   className: "nginx"
