@@ -1,1 +1,26 @@
 replicaCount: 1
+image:
+  repository: us-central1-docker.pkg.dev/terraform-project-wakulovszki/artemis/artemis@sha256:400ccd9a7199e9094daf911415642b417c0f517da75e2359ddab2df93e835a65
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "2.0.0"
+
+service:
+  type: ClusterIP
+  port: 5000
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: {}
+    ingress.kubernetes.io/ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: letsencrypt-prod-dns01
+    acme.cert-manager.io/http01-edit-in-place: "true"
+  hosts:
+    - host: artemis-qa.wakulovszki.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+    - secretName: artemis-tls
+      hosts:
+        - artemis-qa.wakulovszki.com
