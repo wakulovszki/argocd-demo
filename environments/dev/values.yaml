@@ -1,4 +1,5 @@
 replicaCount: 1
+
 image:
   repository: us-central1-docker.pkg.dev/terraform-project-wakulovszki/artemis/artemis
   pullPolicy: IfNotPresent
