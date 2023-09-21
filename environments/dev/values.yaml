@@ -21,6 +21,6 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-    - secretName: artemis-tls
+    - secretName: artemis-dev-tls
       hosts:
         - artemis-dev.wakulovszki.com
