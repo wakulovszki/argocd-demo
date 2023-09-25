@@ -1,11 +1,5 @@
 replicaCount: 3
 
-image:
-  repository: us-central1-docker.pkg.dev/terraform-project-wakulovszki/artemis/artemis@sha256:400ccd9a7199e9094daf911415642b417c0f517da75e2359ddab2df93e835a65
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "2.0.0"
-
 service:
   type: ClusterIP
   port: 80
